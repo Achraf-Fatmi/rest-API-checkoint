@@ -33,15 +33,15 @@ router.get('/:id', async(req,res)=>{
     }
 })
 
-// getting user by name!::: TO USE THIS ONE PUT THE PREVIOUS METHOD "GET BY ID" in COMMENT AND ACTIVATE THIS ONE,  THEY DONT WORK AT THE SAME TIME!
-// router.get('/:name', async(req,res)=>{
-//     try {
-//         const result =await User.find({name:req.params.name})
-//         res.status(200).send({response:result, message:"getting user by name successful"})
-//     } catch (error) {
-//         res.status(400).send({message:"can not get  user"})
-//     }
-// })
+// getting user by name!
+router.get('/name/:name', async(req,res)=>{
+    try {
+        const result =await User.find({name:req.params.name})
+        res.status(200).send({response:result, message:"getting user by name successful"})
+    } catch (error) {
+        res.status(400).send({message:"can not get  user"})
+    }
+})
 
 // delete with id
 router.delete('/:id', async(req,res)=>{
